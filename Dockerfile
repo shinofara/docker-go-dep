@@ -12,4 +12,6 @@ RUN go get -u github.com/golang/dep/... \
     && go install github.com/golang/dep/... \
     && mv /go/bin/dep /usr/bin
 
+RUN ssh -o StrictHostKeyChecking=no -T git@github.com || true
+
 ENTRYPOINT ["dep"]
